@@ -1,0 +1,1 @@
+export const testString = country => `I am from ${country}!`;
