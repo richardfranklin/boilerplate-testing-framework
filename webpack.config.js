@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 module.exports = {
+	mode: 'development',
 	entry: './src/index.js',
 	// devtool: 'eval-source-map',
 	// devtool: false,
