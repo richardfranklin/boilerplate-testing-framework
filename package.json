@@ -41,7 +41,7 @@
     "karma-jasmine-html-reporter": "^1.1.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^3.0.0",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
+    "webpack": "^4.14.0",
+    "webpack-dev-server": "^3.1.4"
   }
 }

@@ -23,10 +23,11 @@ module.exports = function (config) {
     },
     reporters: config.coverage ? ['progress', 'coverage'] : ['progress', 'kjhtml'],
     webpack: {
+      mode: 'development',
       cache: true,
       devtool: 'inline-source-map',
       module: {
-        loaders: [
+        rules: [
           {
             enforce: 'pre',
             test: /.spec\.js$/,
