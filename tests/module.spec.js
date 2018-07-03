@@ -24,27 +24,40 @@ describe('module', function () {
 
     // TEST ------------------------------------------------------------------------
     it('Should be sped up by 50mph', () => {
-        var ford = new Car();
+        const ford = new Car();
         ford.accelerate(50);
         expect(ford.speed).toEqual(50);
     });
 
     // TEST ------------------------------------------------------------------------
-    
+    it ('spyOn() demo', () => {
+        const bentley = new Car();
+        spyOn(bentley, 'changeSpeed').and.callThrough();
+        bentley.accelerate(50);
+        expect(bentley.speed).toEqual(50);
+    });
+
+    // TEST ------------------------------------------------------------------------
+    it ('spyOn() demo 2', () => {
+        const audi = new Car();
+        spyOn(audi, 'getSpeed').and.returnValue(50);
+        expect(audi.changeSpeed()).toEqual(50);
+    });
+
+    // TEST ------------------------------------------------------------------------
+    it ('spyOn() demo 3', () => {
+
+        const fakeFunction = additional => {
+            return additional + 5;
+        };
+
+        const honda = new Car();
+        spyOn(honda, 'getSpeed').and.callFake(fakeFunction);
+        expect(honda.getSpeed(70)).toEqual(75);
+    });
 
     // TEST ------------------------------------------------------------------------
 
-
-    // TEST ------------------------------------------------------------------------
-
-
-    // TEST ------------------------------------------------------------------------
-
-
-    // TEST ------------------------------------------------------------------------
-
-
-    // TEST ------------------------------------------------------------------------
 
     
 });

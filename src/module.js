@@ -8,9 +8,25 @@ export const testObj = {
 
 export function Car() {
     this.speed = 0;
-    this.accelerate = accSpeed => {
-        this.speed += accSpeed;
+
+    this.getSpeed = () => {
+        return this.speed
     }
+
+    this.changeSpeed = speedChange => {
+        this.speed += speedChange;
+        return this.getSpeed();
+    }
+
+    this.accelerate = speedChange => {
+        this.changeSpeed (speedChange);
+    }
+
+    this.decelerate = speedChange => {
+        this.changeSpeed (-speedChange);
+        return this.getSpeed();
+    }
+
     this.stop = () => {
         this.speed = 0;
     }
